@@ -20,6 +20,7 @@
 			$_SESSION['start'] = time();
 			$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 			$_SESSION['type'] = $row['type'];
+			$_SESSION['idUser'] = $row['idUser'];
 			header("Status: 301 Moved Permanently");
 			header("Location: ../views/home.php");
 			exit;

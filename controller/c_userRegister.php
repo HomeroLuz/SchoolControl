@@ -21,8 +21,9 @@
 	} else{
 		$hash = password_hash($inputPasswordIn, PASSWORD_BCRYPT);
 		$registrationDate = date('Y-m-d h:i:s');
-		$query = "INSERT INTO user (userName, name, email, password, registrationDate, type) 
-							VALUES ('$userNameIn', '$personalNameIn', '$emailAddressIn', '$hash', '$registrationDate', '2')";
+		$userCodeIn = generateUserCode();
+		$query = "INSERT INTO user (userName, name, email, password, registrationDate, type, userCode) 
+							VALUES ('$userNameIn', '$personalNameIn', '$emailAddressIn', '$hash', '$registrationDate', '3', '$userCodeIn')";
 		if ($conexion->query($query) === TRUE) {
 			echo "<br />" . "<h2>" . "Usuario Creado Exitosamente!" . "</h2>";
 			echo "<h4>" . "Bienvenido: " . $personalNameIn . "</h4>" . "\n\n";
@@ -30,6 +31,19 @@
 		} else {
 			echo "Error al crear el usuario: " . $query . "<br>" . $conexion->errno . "<br>" . $conexion->error;
 		}
+	}
+
+	function generateUserCode() {
+		$key = "";
+		$caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		$length = 10;
+
+		$max = strlen($caracteres) - 1;
+		for ($i=0; $i < $length; $i++) { 
+			$key = substr($caracteres, rand(0, $max), 1);
+		}
+
+		return $key;
 	}
 
 	mysqli_close($conexion);

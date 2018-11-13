@@ -14,7 +14,7 @@
 		die('Las contraseñas no coinciden, Verifique <br /> <a href="index.html">Volver</a>');
 	}
 
-	$findUser = "SELECT * FROM user WHERE userName = '$userNameIn'";
+	$findUser = "SELECT userName FROM user WHERE userName = '$userNameIn'";
 	$result = $conexion->query($findUser);
 	$count = mysqli_num_rows($result);
 	echo "Count: " . $count;
