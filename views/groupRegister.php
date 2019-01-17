@@ -4,10 +4,6 @@
 <?php
 	include('../controller/usersession.php');
 ?>
-<!-- Si hay una sesion ahora validar permiso de usuario -->
-<?
-	
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>	
@@ -41,5 +37,8 @@
 	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 	<script src="../js/vendor/bootstrap.js"></script>
 	<script src="../js/main.js"></script>
+	<?php
+        include('footer.php');
+    ?>
 </body>
 </html>

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class=" ">
+	<?php
+		include('menuAnonymous.php');
+	?>
 	<form id="userRegisterForm" action="../controller/c_userRegister.php" method="POST">
 		<!-- DATOS PERSONALES -->
 		<label><h3>&ensp;DATOS PERSONALES</h3></label><br/>

@@ -1,7 +1,10 @@
+<!--
+	@Autor: Homero Luz
+-->
 <?php
-	include('../config/config.php');
-	include('userSession.php');
-	include('keyGenerator.php');
+include('../config/config.php');
+include('userSession.php');
+include('keyGenerator.php');
 
 	$personalNameIn = $_POST['personalName'];
 	$paternalSurnameIn = $_POST['paternalSurname'];
@@ -61,11 +64,18 @@
 							'$idGroup'
 							)
 				";
-		if ($conexion->query($query) === TRUE) {
+		$getGroup = "SELECT idGroup, inscribed FROM schoolGroup WHERE idGroup = '$idGroup'";
+		$resultGetGroup = $conexion->query($getGroup);
+		$row = $resultGetGroup->fetch_array(MYSQLI_ASSOC);
+		$inscribedIn = $row['inscribed'];
+		$inscribed = (int)$inscribedIn + 1;
+		$updateGroup = "UPDATE schoolGroup SET inscribed = '$inscribed' WHERE idGroup = '$idGroup'";
+
+		if ($conexion->query($query) === TRUE && $conexion->query($updateGroup) === TRUE) {
 			echo "<br />" . "<h2>" . "Alumno registrado Exitosamente!" . "</h2>";
 			echo "<h5>" . " " . "<a href='../views/studentRegister.php'>Volver</a>" . "</h5>";
 		} else {
-			echo "Error al crear el usuario: " . $query . "<br>" . $conexion->errno . "<br>" . $conexion->error;
+			echo "Error al crear el alumno: " . $query . "<br>" . $conexion->errno . "<br>" . $conexion->error;
 		}
 	}
 

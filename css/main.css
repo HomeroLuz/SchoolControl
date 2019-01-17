@@ -280,6 +280,19 @@ header
 .contentCenter {
     text-align: center;
 }
+/*showGroups*/
+table th {
+    text-align: left;
+    padding: 10px;
+    background: #27DFBD;
+    color: white;
+}
+table tr:nth-child(odd) {
+    background: #F0F0F0;
+}
+table td {
+    padding: 10px;
+}
 /*Botones*/
 .btn-primary {
     background-color: #49D3D1;

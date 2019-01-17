@@ -1,78 +1,69 @@
 <!--
-
+	@Autor: Homero Luz
 -->
+<?php
+    include ('../controller/usersession.php');
+?>
 <!DOCTYPE html>
-<html>
-	<head>	
-		<title>Registro</title>
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-	    <link rel="stylesheet" href="../css/bootstrap.css"> 
-	    <link rel="stylesheet" href="../css/main.css">
-	</head>
-	<body>	
-			<form action="../controller/c_register.php" method="POST">
-				<!-- DATOS PERSONALES -->
-				<hr/>
-				<div class="form-group">
-					<label for="firstName">Nombre</label>
-					<input type="text" class="form-control" id="firstName" name="firstName" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-group">
-					<label for="paternalSurname">Apellido Paterno</label>
-					<input type="text" class="form-control" id="paternalSurname" name="paternalSurname" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-group">
-					<label for="maternalSurname">Apellido Materno</label>
-					<input type="text" class="form-control" id="maternalSurname" name="maternalSurname" placeholder="1234 Main St">
-				</div>
-				<div class="form-group">
-					<label for="date">Fecha de nacimiento</label>
-					<input type="date" class="form-control" id="birthDate" name="birthDate" required="true">
-				</div>
-				<!-- DATOS ACADEMICOS -->
-				<hr/>
-				<div class="divider"/>
-				<div class="form-group">
-					<label for="career">Programa de licenciatura</label>
-					<input type="text" class="form-control" id="career" name="career" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-group">
-					<label for="career">Matricula</label>
-					<input type="text" class="form-control" id="enrollment" name="enrollment" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-group">
-					<label for="yearOfIncome">Año de ingreso</label>
-					<input type="text" class="form-control" id="yearOfIncome" name="yearOfIncome" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-group">
-					<label for="yearOfGraduation">Año de egreso</label>
-					<input type="text" class="form-control" id="yearOfGraduation" name="yearOfGraduation" placeholder="1234 Main St" required="true">
-				</div>
-				<div class="form-check">
-					<input type="checkbox"  class="form-check-input" id="isProfessional" name="isProfessional">
-					<label class="form-check-label" for="isProfessional">Con Título Profesional</label>
-				</div>
-				<!-- DATOS DE USUARIO -->
-				<hr/>
+<html lang="en">
+<head>	
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="../css/bootstrap.css"> 
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class=" ">
+	<?php
+		include('menu.php');
+	?>	
+	<form id="registerForm" action="../controller/c_register.php" method="POST">
+		<!-- DATOS PERSONALES -->
+		<label><h3>&ensp;DATOS PERSONALES</h3></label><br/>
+		<div class="form-group">
+			<label for="personalName">&emsp;Nombre</label>
+			<input type="text" class="form-control" id="personalName" name="personalName" placeholder="i.e. Mario Perez" required="true">
+		</div>
+		
+		<div class="form-group">
+			<label for="emailAddress">&emsp;Correo electrónico</label>
+			<input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailHelp" placeholder="ejemplo@servidor.com" required="true">
+		</div>
 
-				<div class="divider"/>
-				<div class="form-group">
-					<label for="emailAddress">Correo electrónico</label>
-					<input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter email" required="true">
-					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div>
-				<div class="form-group">
-					<label for="inputPassword">Contraseña</label>
-					<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required="true">
-				</div>
-				<div class="form-group">
-					<label for="inputPassword">Confirmar Contraseña</label>
-					<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="true">
-				</div>
-				<hr/>
-				<button type="submit" class="btn btn-primary">Registrarse</button>
-			</form>
-	</body>
+		<!-- DATOS DE USUARIO -->
+		<div class="divider"/>
+		<label><h3>&ensp;DATOS DE USUARIO</h3></label><br/>
+		<div class="form-group">
+			<label for="userName">&emsp;Nombre de usuario</label>
+			<input type="text" class="form-control" id="userName" name="userName" placeholder="i.e. map_22" required="true">
+			<small id="msgHelp" class="form-text text-muted">&emsp;Puede formar su nombre de usuario con las 2 letras de su nombre, la primera inicial de cada apellido y un número de dos dígitos</small>
+		</div>
+		<div class="form-group">
+			<label for="userType">&emsp;Perfil de usuario:</label>
+			<select class="form-control" id="userType" name="userType">
+				<option selected value="-1">Seleccione una opción</option>
+				<option value="0">Administrador</option>
+				<option value="1">Capturador</option>
+				<option value="2">Profesor</option>
+				<option value="3">Usuario</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">&emsp;Contraseña</label>
+			<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required="true">
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">&emsp;Confirmar Contraseña</label>
+			<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="true">
+		</div>
+		<div class="contentCenter">
+			<button type="submit" class="btn btn-primary">Registrarse</button>
+		</div>
+	</form>
+	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+	<script src="../js/vendor/bootstrap.js"></script>
+	<script src="../js/main.js"></script>
+	<?php
+		include('footer.php');
+	?>
+</body>
 </html>
-
-

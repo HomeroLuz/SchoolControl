@@ -1,5 +1,5 @@
 <?php 
-	// Datos de comfiguracion para conexion con la base de datos
+	// Datos de configuracion para conexion con la base de datos
 	$db_server = 'localhost';
 	$db_database = 'schoolcontrol';
 	$db_username = 'root';

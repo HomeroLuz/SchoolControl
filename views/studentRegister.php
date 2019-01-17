@@ -64,7 +64,7 @@
 		</div>
 		<label><h3>&ensp;DATOS ACADEMICOS</h3></label><br/>
 		<div class="form-group">
-			<label for="groupInscribed">&emsp;Agregar a grupo:</label>
+			<label for="groupSelect">&emsp;Agregar a grupo:</label>
 			<select class="form-control" id="groupSelect" name="groupSelect">
 				<option selected value="0">Seleccione una opción</option>
 				<?php    
@@ -90,5 +90,8 @@
 	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 	<script src="../js/vendor/bootstrap.js"></script>
 	<script src="../js/main.js"></script>
+	<?php
+		include('footer.php');
+	?>
 </body>
 </html>

@@ -17,10 +17,10 @@
 	<?php
     	include('menu.php');
 	?>
-	<label class="formTitle">Alta de alumno</label><br/>
-    <p>Para iniciar con una nueva solicitud seleccione la opcion correspondiente:</p>
-    <input type="button" id="secondaryButton" class="rounded" name="secondaryButton" value="Ejemplar sin registro">
-	<a href=../controller/logout.php>Cerrar Sesion X </a>
+	<label class="formTitle">Bienvenido</label><br/>
+    <p align="justify" class="col-md-8">El sistema de control escolar le ofrece una manera práctica de acceso a la información  ya que cuenta con administración de información de alumnos, personal de la institución y docentes.</p>
+    <!-- <input type="button" id="secondaryButton" class="rounded" name="secondaryButton" value="Ejemplar sin registro">
+	<a href=../controller/logout.php>Cerrar Sesion X </a> -->
 
 	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="../js/vendor/bootstrap.js"></script>

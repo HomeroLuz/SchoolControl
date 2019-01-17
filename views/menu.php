@@ -37,7 +37,10 @@
 
             <ul class="nav navbar-nav">
                 <li><a href="home.php">Inicio</a></li>
-                <li><a href="register.php">Registrarse</a></li>
+                <li><a href="register.php">Registrar Usuario</a></li>
+                <li><a href="studentRegister.php">Registrar alumno</a></li>
+                <li><a href="groupRegister.php">Nuevo grupo</a></li>
+                <li><a href="showGroups.php">Grupos</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -50,6 +53,7 @@
 	            <li><a href="home.php">Inicio</a></li>
 	            <li><a href="studentRegister.php">Registrar alumno</a></li>
                 <li><a href="groupRegister.php">Nuevo grupo</a></li>
+                <li><a href="showGroups.php">Grupos</a></li>
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">

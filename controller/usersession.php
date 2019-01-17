@@ -2,7 +2,7 @@
 	session_start();
 
 	if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-		echo "Usuario tipo: " . $_SESSION['type'];
+		/*echo "Usuario tipo: " . $_SESSION['type'];*/
 	} else {
 		echo "Esta pagina es solo para usuarios registrados.<br>";
 		echo "<br><a href='../views/login.php'>Login</a>";
