@@ -293,6 +293,25 @@ table tr:nth-child(odd) {
 table td {
     padding: 10px;
 }
+/*studentRegister*/
+#studentRegisterForm {
+    background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(116,219,143,0.36) 100%);
+    border-radius: 21px 21px 21px 21px;
+    -moz-border-radius: 21px 21px 21px 21px;
+    -webkit-border-radius: 21px 21px 21px 21px;
+    border: 0px solid #000000;
+}
+/*schoolSubjectRegister*/
+#schoolSubjectRegisterForm, #groupRegisterForm, #curricularMapRegisterForm, #scoreRegisterForm {
+    /*background: -webkit-linear-gradient(top, rgba(84,255,138,1) 0%, rgba(199,191,177,0.43) 100%);*/
+    /*background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(116,219,143,0.36) 100%);*/
+    background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(0,255,64,0.36) 100%);
+    /*borde redondeado*/
+    border-radius: 21px 21px 21px 21px;
+    -moz-border-radius: 21px 21px 21px 21px;
+    -webkit-border-radius: 21px 21px 21px 21px;
+    border: 0px solid #000000;
+}
 /*Botones*/
 .btn-primary {
     background-color: #49D3D1;
@@ -312,4 +331,8 @@ table td {
     -moz-border-radius: 39px 39px 39px 39px;
     -webkit-border-radius: 39px 39px 39px 39px;
     border: 0px solid #000000;
+}
+/*titulos*/
+.display-4 {
+    background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(0,255,64,0.36) 100%);
 }

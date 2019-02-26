@@ -22,9 +22,6 @@
     <!-- <input type="button" id="secondaryButton" class="rounded" name="secondaryButton" value="Ejemplar sin registro">
 	<a href=../controller/logout.php>Cerrar Sesion X </a> -->
 
-	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-    <script src="../js/vendor/bootstrap.js"></script>
-    <script src="../js/main.js"></script>
     <?php
         include('footer.php');
     ?>

@@ -5,7 +5,7 @@
 	include('../controller/usersession.php');
 	include('../config/config.php');
 
-	$listGroups = "SELECT idGroup, name, adviser, quota, inscribed, low, groupKey, registrationDate FROM schoolgroup";
+	$listGroups = "SELECT idGroup, name, adviser, quota, inscribed, low, groupKey, grade, registrationDate FROM schoolgroup";
 	$result = $conexion->query($listGroups);
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,8 @@
 			<th>Cupo</th>
 			<th>Inscritos</th>
 			<th>Bajas</th>
-			<th>Clave</th>
+			<th>Clave en sistema</th>
+			<th>Grado</th>
 			<th>Fecha de Alta</th>
 			<th>Acciones</th>
 		</tr>
@@ -47,6 +48,7 @@
 						<td><?php echo $row['inscribed']?></td>
 						<td><?php echo $row['low']?></td>
 						<td><?php echo $row['groupKey']?></td>
+						<td><?php echo $row['grade']?></td>
 						<td><?php echo $row['registrationDate']?></td>
 						<td>
 							<a href=" <?php echo "groupDetail.php?opc=". $row['groupKey'] ?> " class="link_detail">Ver detalle</a>
@@ -62,9 +64,6 @@
 		$result->free();
 		$conexion->close();
 	?>
-	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-	<script src="../js/vendor/bootstrap.js"></script>
-	<script src="../js/main.js"></script>
 	<?php
 		include('footer.php');
 	?>

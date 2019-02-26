@@ -26,9 +26,6 @@
 		
 		<button type="submit" class="btn btn-primary btn-margin">Aceptar</button>
 	</form>
-	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-	<script src="../js/vendor/bootstrap.js"></script>
-	<script src="../js/main.js"></script>
 	<?php
 		include('footer.php');
 	?>

@@ -79,17 +79,11 @@
 				?>     
 			</select>
 		</div>
-		<div class="form-group">
-			<label for="grade">&emsp;Grado</label>
-			<input type="text" class="form-control" id="grade" name="grade" placeholder="i.e. 1, 2 o 3 según el grado" required="true">
-		</div>
 		<div class="contentCenter">
 			<button type="submit" class="btn btn-primary">Registrar</button>
 		</div>
+		<hr/>
 	</form>
-	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-	<script src="../js/vendor/bootstrap.js"></script>
-	<script src="../js/main.js"></script>
 	<?php
 		include('footer.php');
 	?>

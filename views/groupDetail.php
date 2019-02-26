@@ -10,7 +10,7 @@
 	$women = 0;
 
 	$groupInformation = "SELECT idGroup, name, adviser, quota, inscribed, low, groupKey, registrationDate FROM schoolgroup WHERE groupKey = '$groupKeySelected'";
-	$getStudentList = "SELECT student.idStudent, student.name, student.paternalSurname, student.maternalSurname, student.studentKey, student.gender, schoolgroup.idGroup FROM student INNER JOIN schoolgroup ON student.idGroup = schoolgroup.idGroup WHERE schoolgroup.groupKey = '$groupKeySelected'";
+	$getStudentList = "SELECT student.idStudent, student.name, student.paternalSurname, student.maternalSurname, student.studentKey, student.gender, schoolgroup.idGroup FROM student INNER JOIN schoolgroup ON student.idGroup = schoolgroup.idGroup WHERE schoolgroup.groupKey = '$groupKeySelected' ORDER BY paternalSurname ASC";
 
 	$resultGruop = $conexion->query($groupInformation);
 	$result = $conexion->query($getStudentList);
@@ -40,12 +40,6 @@
 				<td><label>Bajas:</label> <?php echo $rowGroup['low'] ?></td>
 			</tr>
 		</table>
-		<!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-			<hr class="my-4">
-		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		<p class="lead">
-			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-		</p> -->
 	</div>
 	<hr class="my-4">
 	<div class="jumbotron-style">
@@ -69,7 +63,7 @@
 	                        <td><?php echo $row['maternalSurname']?></td>
 	                        <td><?php echo $row['name']?></td>
 	                        <td>
-	                            <a href="#" class="link_detail">Ver detalle</a>
+	                            <a href=" <?php echo "studentDetail.php?opc=". $row['studentKey'] ?> " class="link_detail">Ver perfil</a>
 	                        </td>
 	                    </tr>
 	                <?php
@@ -93,9 +87,6 @@
 		</p>
 	</div>
 </body>
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="../js/vendor/bootstrap.js"></script>
-<script src="../js/main.js"></script>
 <?php
     include('footer.php');
 ?>

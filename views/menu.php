@@ -38,9 +38,31 @@
             <ul class="nav navbar-nav">
                 <li><a href="home.php">Inicio</a></li>
                 <li><a href="register.php">Registrar Usuario</a></li>
-                <li><a href="studentRegister.php">Registrar alumno</a></li>
-                <li><a href="groupRegister.php">Nuevo grupo</a></li>
-                <li><a href="showGroups.php">Grupos</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studentRegister.php">Registrar alumno</a></li>
+                        <li><a href="showStudents.php">Alumnos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Grupo <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="groupRegister.php">Nuevo grupo</a></li>
+                        <li><a href="showGroups.php">Grupos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="schoolSubjectRegister.php">Registrar Materia</a></li>
+                        <li><a href="showSchoolSubjects.php">Materias</a></li>
+                        <li><a href="curricularMapRegister.php">Asignar carga</a></li>
+                        <li><a href="curriculum.php">Plan de estudios</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Evaluar <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="scoreRegister.php">Subir calificación</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -51,9 +73,48 @@
         ?>
         	<ul class="nav navbar-nav">
 	            <li><a href="home.php">Inicio</a></li>
-	            <li><a href="studentRegister.php">Registrar alumno</a></li>
-                <li><a href="groupRegister.php">Nuevo grupo</a></li>
+	            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studentRegister.php">Registrar alumno</a></li>
+                        <li><a href="showStudents.php">Alumnos</a></li>
+                    </ul>
+                </li>
                 <li><a href="showGroups.php">Grupos</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="showSchoolSubjects.php">Materias</a></li>
+                        <li><a href="curriculum.php">Plan de estudios</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Evaluar <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="scoreRegister.php">Subir calificación</a></li>
+                    </ul>
+                </li>
+	        </ul>
+
+	        <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Acerca de</a></li>
+                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
+	        </ul>
+	    <?php
+	    	} else if($_SESSION['type'] == 2){
+	    ?>
+	    	<ul class="nav navbar-nav">
+                <li><a href="home.php">Inicio</a></li>
+	            <li><a href="showStudents.php">Alumnos</a></li>
+	            <li><a href="showGroups.php">Grupos</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="showSchoolSubjects.php">Materias</a></li>
+                        <li><a href="curriculum.php">Plan de estudios</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Evaluar <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="scoreRegister.php">Subir calificación</a></li>
+                    </ul>
+                </li>
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">
@@ -63,16 +124,18 @@
 	    <?php
 	    	} else {
 	    ?>
-	    	<ul class="nav navbar-nav">
-	            <li><a href="#">opc1user</a></li>
-	            <li><a href="#">opc2user</a></li>
-	        </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="home.php">Inicio</a></li>
+                <li><a href="#">Consultar calificación</a></li>
+                <li><a href="#">Consultar reportes</a></li>
+            </ul>
 
-	        <ul class="nav navbar-nav navbar-right">
-	            <li><a href="#">Acerca de</a></li>
-	        </ul>
-	    <?php
-	    	}
-	    ?>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
+            </ul>
+        <?php
+            }
+        ?>
     </div>
 </nav>

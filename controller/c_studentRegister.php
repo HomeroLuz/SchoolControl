@@ -15,7 +15,6 @@ include('keyGenerator.php');
 	$addressIn = $_POST['address'];
 	$phoneIn = $_POST['phone'];
 	$groupSelectIn = $_POST['groupSelect'];
-	$gradeIn = $_POST['grade'];
 
 	$findStudent = "SELECT name, curp FROM student WHERE curp = '$curpIn'";
 	$result = $conexion->query($findStudent);
@@ -28,7 +27,6 @@ include('keyGenerator.php');
 		$registrationDate = date('Y-m-d h:i:s');
 		$idGroup = (int)$groupSelectIn;
 		$gender = (int)$genderIn;
-		$grade = (int)$gradeIn;
 		$idCreator = $_SESSION['idUser'];
 		$studentKeyIn = generateKey(10);
 		$query = "
@@ -41,7 +39,6 @@ include('keyGenerator.php');
 							gender, 
 							curp, 
 							studentKey, 
-							grade, 
 							address, 
 							phone,
 							registrationDate, 
@@ -56,7 +53,6 @@ include('keyGenerator.php');
 							'$gender',
 							'$curpIn',
 							'$studentKeyIn',
-							'$grade',
 							'$addressIn',
 							'$phoneIn',
 							'$registrationDate',
