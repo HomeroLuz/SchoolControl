@@ -7,12 +7,11 @@
 
 	$groupList = "SELECT idGroup, name, adviser, quota, inscribed, low, groupKey, grade, registrationDate FROM schoolgroup";
 	$groupResult = $conexion->query($groupList);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>	
-	<title>Calificar</title>
+	<title>Nuevo reporte</title>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="../css/bootstrap.css"> 
     <link rel="stylesheet" href="../css/main.css">
@@ -21,9 +20,8 @@
 	<?php
 		include('menu.php');
 	?>
-	<form id="scoreRegisterForm" method="POST">
-		<label><h3>&ensp;DAR DE ALTA CALIFICACIÓN</h3></label><br/>
-		<div class="instructionsText">Para dar de alta una calificación seleccione el grupo</div>
+	<form id="reportRegisterForm" action="../controller/c_studentRegister.php" method="POST">
+		<label><h3>&ensp; NUEVO REPORTE</h3></label><br/>
 		<div class="form-group">
 			<label for="groupSelected">&emsp;Grupo:</label>
 			<select class="form-control" id="groupSelected" name="groupSelected">
@@ -41,20 +39,17 @@
 				$conexion->close();
 				?>     
 			</select>
-		</div>		
+		</div>
 		<div class="contentCenter">
 			<button type="button" class="btn btn-primary" onclick="getStudents()">Ver alumnos</button>
 		</div>
-		<hr/>
+		<hr/>		
 	</form>
 	<div id="resultStudents"></div>
-	<div id="resultSchoolSubject"></div>
-	<div id="resultScore"></div>
-	<div id="resultShowScore"></div>
-
+	<div id="resultForm"></div>
+	<script src="../js/reportRegister.js"></script>
+	<?php
+		include('footer.php');
+	?>
 </body>
-<script src="../js/scoreRegister.js"></script>
-<?php
-	include('footer.php');
-?>
 </html>

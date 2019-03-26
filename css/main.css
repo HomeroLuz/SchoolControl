@@ -302,7 +302,7 @@ table td {
     border: 0px solid #000000;
 }
 /*schoolSubjectRegister*/
-#schoolSubjectRegisterForm, #groupRegisterForm, #curricularMapRegisterForm, #scoreRegisterForm {
+#schoolSubjectRegisterForm, #groupRegisterForm, #curricularMapRegisterForm, #scoreRegisterForm, #reportRegisterForm {
     /*background: -webkit-linear-gradient(top, rgba(84,255,138,1) 0%, rgba(199,191,177,0.43) 100%);*/
     /*background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(116,219,143,0.36) 100%);*/
     background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(0,255,64,0.36) 100%);
@@ -311,6 +311,18 @@ table td {
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;
     border: 0px solid #000000;
+}
+/*score register*/
+.tableButton {
+    width: 30px;
+    background-color: #49D3D1;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+}
+.scoreTab {
+    background-color: #D6EAF8;
+}
+.scoreTabMargin {
+    margin-left: 1%;
 }
 /*Botones*/
 .btn-primary {
@@ -332,7 +344,25 @@ table td {
     -webkit-border-radius: 39px 39px 39px 39px;
     border: 0px solid #000000;
 }
-/*titulos*/
+.buttonTable2 {
+    width: 200px;
+}
+/*titulos y textos*/
 .display-4 {
     background: -webkit-linear-gradient(top, rgba(101,240,212,1) 0%, rgba(0,255,64,0.36) 100%);
+}
+.cellCenter {
+    text-align: center;
+}
+.instructionsText {
+    font-size: 1.3em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin-left: 1%;
+    color: #3E6387;
+}
+.messageInfo {
+    color: green;
+}
+.messageError {
+    color: red;
 }

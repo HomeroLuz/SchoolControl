@@ -63,6 +63,13 @@
                         <li><a href="scoreRegister.php">Subir calificación</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reportRegister.php">Nuevo reporte</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </li>
+                <!-- FALTA AGREGAR REPORTES -->
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -91,6 +98,13 @@
                         <li><a href="scoreRegister.php">Subir calificación</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reportRegister.php">Nuevo reporte</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </li>
+                <!-- FALTA AGREGAR REPORTES -->
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">
@@ -102,8 +116,39 @@
 	    ?>
 	    	<ul class="nav navbar-nav">
                 <li><a href="home.php">Inicio</a></li>
-	            <li><a href="showStudents.php">Alumnos</a></li>
-	            <li><a href="showGroups.php">Grupos</a></li>
+                <li><a href="showStudents.php">Alumnos</a></li>
+                <li><a href="showGroups.php">Grupos</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="showSchoolSubjects.php">Materias</a></li>
+                        <li><a href="curriculum.php">Plan de estudios</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reportRegister.php">Nuevo reporte</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </li>
+                <!-- FALTA AGREGAR REPORTES -->
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
+            </ul>
+	    <?php
+	    	} else if($_SESSION['type'] == 3){
+	    ?>
+            <ul class="nav navbar-nav">
+                <li><a href="home.php">Inicio</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studentRegister.php">Registrar alumno</a></li>
+                        <li><a href="showStudents.php">Alumnos</a></li>
+                    </ul>
+                </li>
+                <li><a href="showGroups.php">Grupos</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="showSchoolSubjects.php">Materias</a></li>
@@ -115,19 +160,13 @@
                         <li><a href="scoreRegister.php">Subir calificación</a></li>
                     </ul>
                 </li>
-	        </ul>
-
-	        <ul class="nav navbar-nav navbar-right">
-	            <li><a href="#">Acerca de</a></li>
-                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
-	        </ul>
-	    <?php
-	    	} else {
-	    ?>
-            <ul class="nav navbar-nav">
-                <li><a href="home.php">Inicio</a></li>
-                <li><a href="#">Consultar calificación</a></li>
-                <li><a href="#">Consultar reportes</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reportRegister.php">Nuevo reporte</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </li>
+                <!-- FALTA AGREGAR REPORTES -->
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -135,6 +174,40 @@
                 <li><a href="../controller/logout.php">Cerrar sesión</a></li>
             </ul>
         <?php
+            } else if ($_SESSION['type'] == 4) {
+        ?>
+            <ul class="nav navbar-nav">
+                <li><a href="home.php">Inicio</a></li>
+                <li><a href="showStudents.php">Alumnos</a></li>
+                <li><a href="showGroups.php">Grupos</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignatura <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="showSchoolSubjects.php">Materias</a></li>
+                        <li><a href="curriculum.php">Plan de estudios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Calificaciones</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
+            </ul>
+        <?php
+            } else {
+        ?>
+            <ul class="nav navbar-nav">
+                <li><a href="home.php">Inicio</a></li>
+                <li><a href="#">Consultar calificación</a></li>
+                <li><a href="#">Consultar reportes</a></li>
+            </ul>
+            <li><a href="#">Calificaciones</a></li>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="../controller/logout.php">Cerrar sesión</a></li>
+            </ul>
+        <?php    
             }
         ?>
     </div>
